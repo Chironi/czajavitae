@@ -1,4 +1,5 @@
 class PagesController < ApplicationController
+
   def home
   end
 
@@ -7,4 +8,5 @@ class PagesController < ApplicationController
 
   def projects
   end
+
 end

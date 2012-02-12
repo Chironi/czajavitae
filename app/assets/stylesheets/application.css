@@ -6,7 +6,6 @@
  *= require_tree . 
 */
 
-
 .container {
   position:relative;
   z-index:1;
