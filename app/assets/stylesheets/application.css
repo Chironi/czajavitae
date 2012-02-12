@@ -1,13 +1,123 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the top of the
- * compiled file, but it's generally better to create a new file per style scope.
- *
+ * This is a manifest file that'll automatically include all the stylesheets available in this directory
+ * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
+ * the top of the compiled file, but it's generally better to create a new file per style scope.
  *= require_self
- *= require_tree .
+ *= require_tree . 
 */
+
+
+.container {
+  position:relative;
+  z-index:1;
+  width:600px;
+  padding:20px;
+  margin:0 auto;
+  background:#FAF0D9;
+}
+
+.container:after {
+  content:"";
+  display:block;
+  clear:both;
+  visibility:hidden;
+  height:0;
+  font-size:0;
+}
+
+/* Shared styles */
+
+.drop-shadow {
+  position:relative;
+  float:left;
+  width:40%;    
+  padding:1em; 
+  margin:2em 10px 4em; 
+  background:#fff;
+  -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+
+.drop-shadow:before,
+.drop-shadow:after {
+  content:"";
+  position:absolute; 
+  z-index:-2;
+}
+
+.drop-shadow p {
+  font-size:16px;
+  font-weight:bold;
+}
+
+.curved:before {
+  top:10px;
+  bottom:10px;
+  left:0;
+  right:50%;
+  -webkit-box-shadow:0 0 15px rgba(0,0,0,0.6);
+  -moz-box-shadow:0 0 15px rgba(0,0,0,0.6);
+  box-shadow:0 0 15px rgba(0,0,0,0.6);
+  -moz-border-radius:10px / 100px;
+  border-radius:10px / 100px;
+}
+
+.curved-vt-2:before {
+  right:0;
+}
+
+
+#container
+{
+  margin: 0 auto;
+  width: 100%;
+}
+
+#header
+{
+  text-align:center;
+  padding: 20px;
+}
+
+#header h1 { }
+
+#leftbar
+{ 
+  float: left;
+  width: 28%;
+  position: relative;
+}
+
+#leftbar ul
+{
+  margin: 0;
+  padding: 0;
+}
+
+#leftbar ul li
+{
+  margin: 0 0 1em;
+  padding: 0;
+  list-style-type: none;
+}
+
+#centerpage
+{
+  background-color:#74C365;
+  float: left;
+  width: 44%;
+}
+
+#content h2 { margin: 0; }
+
+#rightbar
+{
+  float: right;
+  width: 28%;
+  position:relative;
+}
+
+#rightbar h3 { margin: 0; }
+
+
