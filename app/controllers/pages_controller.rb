@@ -1,6 +1,13 @@
 class PagesController < ApplicationController
 
-  def home
+  def index
+    @posts = Post.all
+    
+    respond_to do |format|
+      format.html
+      format.json {render :json => @posts}
+    end
+
   end
 
   def about

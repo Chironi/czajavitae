@@ -73,10 +73,14 @@
   width: 100%;
 }
 
-#header
+.header
 {
   text-align:center;
   padding: 20px;
+  position: absolute;
+  margin-left:27%;
+  width:42%;
+  z-index:10;
 }
 
 #header h1 { }
@@ -101,11 +105,15 @@
   list-style-type: none;
 }
 
-#centerpage
+.centerpage
 {
-  background-color:#74C365;
-  float: left;
-  width: 44%;
+  background-color:#F5FFFA;
+  line-height: 1.25em;
+  font-size: 1.25em;
+  position: relative;
+  margin-top: 5%;
+}
+
 }
 
 #content h2 { margin: 0; }
