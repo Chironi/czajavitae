@@ -13,10 +13,13 @@
   <div class="drop-shadow curved curved-vt-2 centerpage">
     <br>
     <br>
+    <br>
+    <br>
     <% @posts.each do |post| %>
-      <p><%= post.title %></p>
-      <p><%= post.date %></p>
+      <h2><%= post.title %></h2>
+      <p><%= post.date.strftime("%b. %d %Y %I:%M%p") %></p>
       <p><%= post.content %></p>
+      <hr>
     <% end %>
 
   </div>
