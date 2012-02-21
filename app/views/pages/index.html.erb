@@ -1,16 +1,26 @@
+<script>
+  $(document).ready(function(){
+  $('.toggle').click(function(){
+      $('.centerpage').slideToggle('slow');
+  });
+});
+</script>
+
+
 <div id="container">
   <div class="drop-shadow header">
     <h1>CZAJAVITAE</h1>
-    <p>William Paul Czaja</p>
+    <h2>William Paul Czaja</h2>
     <p>    
       <%= link_to "About", pages_about_path %>
       <%= link_to "Projects", pages_projects_path %>
+      <button class="toggle">Slide</button>
     </p>
   </div>
   <div id="leftbar">
     <p>
   </div>
-  <div class="drop-shadow curved curved-vt-2 centerpage">
+  <div id="centerpage" class="drop-shadow curved curved-vt-2 centerpage">
     <br>
     <br>
     <br>
@@ -21,7 +31,7 @@
       <p><%= post.content %></p>
       <hr>
     <% end %>
-
+    <div class="toggle"><p>^^^</p></div>
   </div>
   <div id="rightbar">
     <p>
