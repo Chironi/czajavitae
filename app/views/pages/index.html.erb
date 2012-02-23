@@ -1,10 +1,4 @@
 <script>
-  //$(document).ready(function(){
-  //$('.toggle').click(function(){
-   //   $('.centerpage').slideToggle('slow');
-  //});
-//});
-
 function togglePageSlide(id)
 { 
   var a = document.getElementById("currents_span").style.display;
@@ -40,11 +34,14 @@ function togglePageSlide(id)
   {
     $(id).hide();
     $('.centerpage').slideUp('slow');
+    setTimeout(function(){showAfterDelay(id)}, 500);
+  }
+  else
+  {
+    showAfterDelay(id);
   }
 
   $('.centerpage').slideDown('slow');
-
-  setTimeout(function(){showAfterDelay(id)}, 500);
 
   //$('.current_span').fadeIn('fast');
 }
@@ -60,7 +57,7 @@ function showAfterDelay(id)
 <div id="container">
   <div class="drop-shadow header">
     <h1>CZAJAVITAE</h1>
-    <h2>William Paul Czaja</h2>
+    <h2><a href="mailto:william.czaja@gmail.com">William Paul Czaja</a></h2>
     <p>   
     <u class="toggle"></u>
     <a id="currents_link" href="javascript:togglePageSlide('currents_span');">Currents</a>
