@@ -135,7 +135,7 @@
   width: 44%
   margin-left:auto;
   margin-right:auto;
-  position: relative;
+  position: float;
   top: 100px;
   display: none;
 }

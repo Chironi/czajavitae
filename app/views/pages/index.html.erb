@@ -1,9 +1,52 @@
 <script>
-  $(document).ready(function(){
-  $('.toggle').click(function(){
-      $('.centerpage').slideToggle('slow');
-  });
-});
+  //$(document).ready(function(){
+  //$('.toggle').click(function(){
+   //   $('.centerpage').slideToggle('slow');
+  //});
+//});
+
+function togglePageSlide(id)
+{ 
+  var a = document.getElementById("currents_span").style.display;
+  var b = document.getElementById("about_span").style.display;
+  var c = document.getElementById("projects_span").style.display;
+  var d = document.getElementById(id).style.display;
+
+  var isVisible = "block";
+
+  if(d == isVisible)
+  {
+    $('.centerpage').slideToggle('fast');
+    return;  
+  }
+
+  document.getElementById(id).style.display = isVisible;
+
+  switch(id)
+  {
+    case "currents_span":
+      document.getElementById("about_span").style.display = "none";
+      document.getElementById("projects_span").style.display = "none";
+      break;
+    case "about_span":
+      document.getElementById("projects_span").style.display = "none";
+      document.getElementById("currents_span").style.display = "none";
+      break;
+    case "projects_span":
+      document.getElementById("about_span").style.display = "none";
+      document.getElementById("currents_span").style.display = "none";
+      break;
+  }
+
+  if((a == isVisible) || (b == isVisible) || (c == isVisible))
+  {
+    $(id).hide();
+    $('.centerpage').slideUp('fast');
+  }
+
+  $('.centerpage').slideDown('fast');
+}
+
 </script>
 
 
@@ -12,9 +55,10 @@
     <h1>CZAJAVITAE</h1>
     <h2>William Paul Czaja</h2>
     <p>   
-    <u class="toggle"> Currents</u>
-      <%= link_to "About", pages_about_path %>
-      <%= link_to "Projects", pages_projects_path %>
+    <u class="toggle"></u>
+    <a id="currents_link" href="javascript:togglePageSlide('currents_span');">Currents</a>
+    <a id="about_link" href="javascript:togglePageSlide('about_span');">About</a>
+    <a id="projects_link" href="javascript:togglePageSlide('projects_span');">Projects</a>
     </p>
   </div>
   <div id="leftbar">
@@ -25,8 +69,16 @@
     <br>
     <br>
     <br>
-
-    <%=render 'layouts/currents' %>
+    
+    <span id="currents_span" style="display:none;">
+      <%=render 'layouts/currents' %>
+    </span>
+    <span id="about_span" style="display:none;">
+      <%=render 'layouts/about' %>
+    </span>
+    <span id="projects_span" style="display:none;">
+      <%=render 'layouts/projects' %>
+    </span>
 
     <div class="toggle"><p>^^^</p></div>
   </div>
