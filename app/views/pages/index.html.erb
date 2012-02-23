@@ -16,11 +16,9 @@ function togglePageSlide(id)
 
   if(d == isVisible)
   {
-    $('.centerpage').slideToggle('fast');
+    $('.centerpage').slideToggle('slow');
     return;  
   }
-
-  document.getElementById(id).style.display = isVisible;
 
   switch(id)
   {
@@ -41,10 +39,19 @@ function togglePageSlide(id)
   if((a == isVisible) || (b == isVisible) || (c == isVisible))
   {
     $(id).hide();
-    $('.centerpage').slideUp('fast');
+    $('.centerpage').slideUp('slow');
   }
 
-  $('.centerpage').slideDown('fast');
+  $('.centerpage').slideDown('slow');
+
+  setTimeout(function(){showAfterDelay(id)}, 500);
+
+  //$('.current_span').fadeIn('fast');
+}
+
+function showAfterDelay(id)
+{
+  document.getElementById(id).style.display = "block";
 }
 
 </script>
@@ -79,8 +86,6 @@ function togglePageSlide(id)
     <span id="projects_span" style="display:none;">
       <%=render 'layouts/projects' %>
     </span>
-
-    <div class="toggle"><p>^^^</p></div>
   </div>
   <div id="rightbar">
     <p>
