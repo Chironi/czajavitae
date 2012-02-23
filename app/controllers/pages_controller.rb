@@ -10,6 +10,9 @@ class PagesController < ApplicationController
 
   end
 
+  def currents
+  end
+
   def about
   end
 

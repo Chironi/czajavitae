@@ -1,6 +1,8 @@
 Czajavitae::Application.routes.draw do
   resources :posts
 
+  get "pages/currents"
+
   get "pages/about"
 
   get "pages/projects"

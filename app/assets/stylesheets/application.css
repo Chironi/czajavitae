@@ -27,6 +27,15 @@
 
 /* Shared styles */
 
+.toggle{
+  color: #000;
+}
+.toggle:hover{
+    color: #fff;
+    background-color: #000;
+    cursor:pointer;
+  }
+
 .drop-shadow {
   position:relative;
   float:left;
@@ -72,7 +81,7 @@
 {
   margin: 0 auto;
   width: 100%;
-  clear:left;
+  position: relative;
 }
 
 .header
@@ -81,7 +90,7 @@
   text-align:center;
   padding: 20px;
   position: absolute;
-  margin-left:26.85%;
+  margin-left:27.25%;
   width:42%;
   z-index:10;
 }
@@ -108,13 +117,25 @@
   list-style-type: none;
 }
 
+.currents_container
+{
+  background-color:#F5FFFA;
+  line-height: 1.25em;
+  font-size: 1.25em;
+  width: 44%
+  margin-left:auto;
+  margin-right:auto;
+}
+
 .centerpage
 {
   background-color:#F5FFFA;
   line-height: 1.25em;
   font-size: 1.25em;
   width: 44%
-  position: absolute;
+  margin-left:auto;
+  margin-right:auto;
+  position: relative;
   top: 100px;
   display: none;
 }

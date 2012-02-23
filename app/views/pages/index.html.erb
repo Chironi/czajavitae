@@ -11,10 +11,10 @@
   <div class="drop-shadow header">
     <h1>CZAJAVITAE</h1>
     <h2>William Paul Czaja</h2>
-    <p>    
+    <p>   
+    <u class="toggle"> Currents</u>
       <%= link_to "About", pages_about_path %>
       <%= link_to "Projects", pages_projects_path %>
-      <button class="toggle">Slide</button>
     </p>
   </div>
   <div id="leftbar">
@@ -25,12 +25,9 @@
     <br>
     <br>
     <br>
-    <% @posts.each do |post| %>
-      <h2><%= post.title %></h2>
-      <p><%= post.date.strftime("%b. %d %Y %I:%M%p") %></p>
-      <p><%= post.content %></p>
-      <hr>
-    <% end %>
+
+    <%=render 'layouts/currents' %>
+
     <div class="toggle"><p>^^^</p></div>
   </div>
   <div id="rightbar">
